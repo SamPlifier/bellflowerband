@@ -1,22 +1,25 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
-import ButtonAppBar from './components/navbar.js';
-import NavMenu from './components/navMenu.js';
+import TemporaryDrawer from './components/navbar.js';
+import Media from './components/media.js';
 import Home from './components/home.js';
-import Try from './components/try.js';
-import Try2 from './components/try2.js';
+import About from './components/about.js';
+import Merch from './components/merch.js';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import teal from '@material-ui/core/colors/teal';
-import grey from '@material-ui/core/colors/grey';
+import indigo from '@material-ui/core/colors/indigo';
+
 const theme = createMuiTheme({
     palette: {
+        type: 'dark',
         primary: teal,
-        secondary: grey
+        secondary: indigo
     },
     status: {
         danger: 'yellow'
-    }
+    },
+    typography: { useNextVariants: true }
 });
 
 
@@ -26,12 +29,12 @@ class App extends Component {
             <MuiThemeProvider theme={theme}>
             <Router>
             <div className="App">
-                <NavMenu/>
-                <ButtonAppBar />
+                <TemporaryDrawer />
                 <div>
                     <Route exact path="/" component={Home}/>
-                    <Route exact path="/try" component={Try}/>
-                    <Route exact path="/try2" component={Try2}/>
+                    <Route exact path="/media" component={Media}/>
+                    <Route exact path="/about" component={About}/>
+                    <Route exact path="/merch" component={Merch}/>
                 </div>
             </div>
         </Router>
