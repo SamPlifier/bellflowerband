@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/bellflowerband/build/precache-manifest.a69c3128d565eaa7775d58f88c7a7fc2.js"
+  "/bellflowerband/precache-manifest.16f594862bffcdd1bef20fbb85c86c43.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/bellflowerband/build/index.html", {
+workbox.routing.registerNavigationRoute("/bellflowerband/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
