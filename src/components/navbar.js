@@ -8,7 +8,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
-import Divider from '@material-ui/core/Divider';
 
 const styles = {
     list: {
@@ -19,14 +18,18 @@ const styles = {
     },
     root: {
         flexGrow: 1,
-        background: 'linear-gradient(90deg, teal, #4058af)'
+        background: 'linear-gradient(90deg, teal, #4058af)',
+        display: 'flex',
+        justifyContent: 'space-around',
+        padding: 0
     },
     grow: {
         flexGrow: 1
     },
     menuButton: {
         marginLeft: 0,
-        marginRight: 0
+        marginRight: 0,
+        color: 'white'
     }
 };
 class TemporaryDrawer extends React.Component {
@@ -52,11 +55,10 @@ class TemporaryDrawer extends React.Component {
     const { classes } = this.props;
     const fullList = (
       <div className={classes.fullList}>
-        <List classes={{root: classes.root}}>
+        <List classes={{root: classes.root}} elevation={3}>
           {['about', 'media', 'merch', 'home'].map((text, index) => (
-            <ListItem button key={text}>
+            <ListItem button key={text} >
               <Link component={'button'} className={text} to={`/${routeTo(text)}`}><ListItemText primary={text.toUpperCase()} /></Link>
-              <Divider />
             </ListItem>
           ))}
         </List>
@@ -65,7 +67,7 @@ class TemporaryDrawer extends React.Component {
 
     return (
       <div className="topNav">
-        <IconButton onClick={this.toggleDrawer('bottom', true)} anchor="bottom" className={classes.menuButton} color="primary" aria-label="Menu">
+        <IconButton onClick={this.toggleDrawer('bottom', true)} anchor="bottom" className={classes.menuButton} classes={{colorInherit: classes.menuButton}} aria-label="Menu" elevation={3}>
             <MenuIcon />
         </IconButton>
         <Drawer

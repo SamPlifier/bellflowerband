@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/bellflowerband/precache-manifest.16f594862bffcdd1bef20fbb85c86c43.js"
+  "/bellflowerband/precache-manifest.cef11593c97bbb0cc507f9aa5980a45b.js"
 );
 
 workbox.clientsClaim();
