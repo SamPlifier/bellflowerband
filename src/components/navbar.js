@@ -8,26 +8,27 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
+import Divider from '@material-ui/core/Divider';
 
 const styles = {
     list: {
         width: '100vw'
     },
     fullList: {
-        width: 'auto'
+        width: 'auto',
     },
     root: {
-        flexGrow: 1
+        flexGrow: 1,
+        background: 'linear-gradient(90deg, teal, #4058af)'
     },
     grow: {
         flexGrow: 1
     },
     menuButton: {
         marginLeft: 0,
-        marginRight: 20
+        marginRight: 0
     }
 };
-
 class TemporaryDrawer extends React.Component {
   state = {
     bottom: false,
@@ -49,13 +50,13 @@ class TemporaryDrawer extends React.Component {
          }
     }
     const { classes } = this.props;
-
     const fullList = (
       <div className={classes.fullList}>
-        <List>
+        <List classes={{root: classes.root}}>
           {['about', 'media', 'merch', 'home'].map((text, index) => (
             <ListItem button key={text}>
               <Link component={'button'} className={text} to={`/${routeTo(text)}`}><ListItemText primary={text.toUpperCase()} /></Link>
+              <Divider />
             </ListItem>
           ))}
         </List>
@@ -64,20 +65,18 @@ class TemporaryDrawer extends React.Component {
 
     return (
       <div className="topNav">
-        <IconButton onClick={this.toggleDrawer('bottom', true)} anchor="bottom" className={classes.menuButton} color="default" aria-label="Menu">
-            <MenuIcon color="primary"/>
-          </IconButton>
+        <IconButton onClick={this.toggleDrawer('bottom', true)} anchor="bottom" className={classes.menuButton} color="primary" aria-label="Menu">
+            <MenuIcon />
+        </IconButton>
         <Drawer
           anchor="bottom"
           open={this.state.bottom}
-          onClose={this.toggleDrawer('bottom', false)}
-        >
+          onClose={this.toggleDrawer('bottom', false)}>
           <div
             tabIndex={0}
             role="button"
             onClick={this.toggleDrawer('bottom', false)}
-            onKeyDown={this.toggleDrawer('bottom', false)}
-          >
+            onKeyDown={this.toggleDrawer('bottom', false)}>
             {fullList}
           </div>
         </Drawer>

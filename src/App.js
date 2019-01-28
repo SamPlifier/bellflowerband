@@ -22,23 +22,22 @@ const theme = createMuiTheme({
     typography: { useNextVariants: true }
 });
 
-
 class App extends Component {
     render() {
         return (
-            <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={theme}>
             <Router>
-            <div className="App">
-                <TemporaryDrawer />
-                <div>
-                    <Route exact path="/" component={Home}/>
-                    <Route exact path="/media" component={Media}/>
-                    <Route exact path="/about" component={About}/>
-                    <Route exact path="/merch" component={Merch}/>
+                <div className="App">
+                    <TemporaryDrawer />
+                    <div>
+                        <Route exact path="/" component={Home}/>
+                        <Route exact path="/media" component={Media}/>
+                        <Route exact path="/about" component={About}/>
+                        <Route exact path="/merch" component={Merch}/>
+                    </div>
                 </div>
-            </div>
-        </Router>
-    </MuiThemeProvider>);
+            </Router>
+        </MuiThemeProvider>);
     }
 }
 
