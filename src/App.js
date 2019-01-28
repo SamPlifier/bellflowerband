@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+// import {BrowserRouter as Router, Route} from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import TemporaryDrawer from './components/navbar.js';
 import Media from './components/media.js';
@@ -30,10 +31,10 @@ class App extends Component {
                 <div className="App">
                     <TemporaryDrawer />
                     <div>
-                        <Route exact path="/" component={Home}/>
-                        <Route exact path="/media" component={Media}/>
-                        <Route exact path="/about" component={About}/>
-                        <Route exact path="/merch" component={Merch}/>
+                        <Route exact path="/" component={Home} />
+                        <Route path="/media" component={Media} />
+                        <Route path="/merch" component={Merch} />
+                        <Route path="/about" component={About} />
                     </div>
                 </div>
             </Router>
