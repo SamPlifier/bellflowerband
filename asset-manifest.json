@@ -1,13 +1,13 @@
 {
-  "main.css": "/bellflowerband/static/css/main.a8ceb38f.chunk.css",
-  "main.js": "/bellflowerband/static/js/main.3fbc432b.chunk.js",
-  "main.js.map": "/bellflowerband/static/js/main.3fbc432b.chunk.js.map",
-  "static/js/1.f03705cc.chunk.js": "/bellflowerband/static/js/1.f03705cc.chunk.js",
-  "static/js/1.f03705cc.chunk.js.map": "/bellflowerband/static/js/1.f03705cc.chunk.js.map",
-  "runtime~main.js": "/bellflowerband/static/js/runtime~main.b9be85c3.js",
-  "runtime~main.js.map": "/bellflowerband/static/js/runtime~main.b9be85c3.js.map",
-  "static/css/main.a8ceb38f.chunk.css.map": "/bellflowerband/static/css/main.a8ceb38f.chunk.css.map",
-  "index.html": "/bellflowerband/index.html",
-  "precache-manifest.cef11593c97bbb0cc507f9aa5980a45b.js": "/bellflowerband/precache-manifest.cef11593c97bbb0cc507f9aa5980a45b.js",
-  "service-worker.js": "/bellflowerband/service-worker.js"
+  "main.css": "/bellflowerband/build/static/css/main.a8ceb38f.chunk.css",
+  "main.js": "/bellflowerband/build/static/js/main.3eab888f.chunk.js",
+  "main.js.map": "/bellflowerband/build/static/js/main.3eab888f.chunk.js.map",
+  "static/js/1.f03705cc.chunk.js": "/bellflowerband/build/static/js/1.f03705cc.chunk.js",
+  "static/js/1.f03705cc.chunk.js.map": "/bellflowerband/build/static/js/1.f03705cc.chunk.js.map",
+  "runtime~main.js": "/bellflowerband/build/static/js/runtime~main.ce7164e0.js",
+  "runtime~main.js.map": "/bellflowerband/build/static/js/runtime~main.ce7164e0.js.map",
+  "static/css/main.a8ceb38f.chunk.css.map": "/bellflowerband/build/static/css/main.a8ceb38f.chunk.css.map",
+  "index.html": "/bellflowerband/build/index.html",
+  "precache-manifest.5cbdef487d5dd898ca0cc3fb10de9ce5.js": "/bellflowerband/build/precache-manifest.5cbdef487d5dd898ca0cc3fb10de9ce5.js",
+  "service-worker.js": "/bellflowerband/build/service-worker.js"
 }
