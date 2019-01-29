@@ -6,11 +6,12 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: url(https://images.pexels.com/photos/14676/pexels-photo-14676.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    /* background: url(https://images.pexels.com/photos/14676/pexels-photo-14676.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left;
-    background-attachment: fixed;
+    background-attachment: fixed; */
+    background: linear-gradient(-135deg, teal, rgb(64, 88, 175));
     height: 100vh;
     width: 100vw;
 }
@@ -23,12 +24,10 @@ code {
 .topNav {
     position: fixed;
     box-sizing: border-box;
-    background: linear-gradient(90deg, teal, #4058af);
     width: 100vw;
     display: flex;
     justify-content: flex-end;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding: 10px 15px;
 }
 
 .about, .home, .media, .merch {
@@ -36,6 +35,7 @@ code {
     text-decoration: none;
     text-align: center;
 }
+
 .homePage {
     height: 100vh;
     width: 100vw;
@@ -57,7 +57,7 @@ code {
 
 .bellflowerLogo {
     filter: invert(100);
-    width:70%;
+    width: 70%;
     min-width: 330px;
     max-width: 670px;
 }
@@ -67,9 +67,10 @@ code {
     color: white;
     line-height: 22px;
     margin: 15px 0 0 0;
-    font-size: calc(16px + 6 * ((100vw - 400px) / 380));
-
+    /* font-size: calc(16px + 6 * ((100vw - 400px) / 380)); */
+    font-size: 24px;
 }
+
 /* .menuGradient>div>ul {
     background: linear-gradient(90deg, teal, #4058af)!important;
 } */

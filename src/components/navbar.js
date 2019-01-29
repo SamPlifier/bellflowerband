@@ -18,9 +18,7 @@ const styles = {
     },
     root: {
         flexGrow: 1,
-        background: 'linear-gradient(90deg, teal, #4058af)',
-        display: 'flex',
-        justifyContent: 'space-around',
+        background: 'white',
         padding: 0
     },
     grow: {
@@ -42,7 +40,6 @@ class TemporaryDrawer extends React.Component {
       [side]: open,
     });
   };
-
 
   render() {
     const routeTo = (text) => {
@@ -67,6 +64,7 @@ class TemporaryDrawer extends React.Component {
 
     return (
       <div className="topNav">
+          <div className="smallLogo"></div>
         <IconButton onClick={this.toggleDrawer('bottom', true)} anchor="bottom" className={classes.menuButton} classes={{colorInherit: classes.menuButton}} aria-label="Menu" elevation={3}>
             <MenuIcon />
         </IconButton>
