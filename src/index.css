@@ -80,7 +80,9 @@ code {
     height: 100%;
     width: auto;
 }
-
+.instrumentsContainer {
+    padding: 10px 15px;
+}
 .footer {
     box-sizing: border-box;
     height: 300px;
