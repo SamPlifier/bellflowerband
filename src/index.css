@@ -53,6 +53,9 @@ code {
     align-items: center;
     opacity: .8;
 }
+.aboutContainer {
+    padding: 10px 15px;
+}
 
 .bellflowerLogo {
     filter: invert(100);
