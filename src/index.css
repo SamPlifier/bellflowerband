@@ -10,6 +10,7 @@ body {
     height: 100vh;
     width: 100vw;
 }
+
 body::-webkit-scrollbar {
     display: none;
 }
@@ -21,6 +22,8 @@ code {
 
 .topNav {
     position: fixed;
+    top: 0;
+    left: 0;
     box-sizing: border-box;
     width: 100vw;
     display: flex;
@@ -53,8 +56,17 @@ code {
     align-items: center;
     opacity: .8;
 }
+
 .aboutContainer {
     padding: 10px 15px;
+    margin-top: 68px;
+    display: flex;
+    align-items: center;
+}
+
+.instrumentImgContainer img {
+    height: 170px;
+    padding-bottom: 15px;
 }
 
 .bellflowerLogo {
@@ -63,13 +75,14 @@ code {
     min-width: 330px;
     max-width: 670px;
 }
-
+.instrumentName {
+    padding: 20px 0 15px 0;
+}
 .bandDescription p {
     width: 100%;
     color: white;
     line-height: 22px;
     margin: 15px 0 0 0;
-    /* font-size: calc(16px + 6 * ((100vw - 400px) / 380)); */
     font-size: 24px;
 }
 
@@ -83,9 +96,11 @@ code {
     height: 100%;
     width: auto;
 }
+
 .instrumentsContainer {
     padding: 10px 15px;
 }
+
 .footer {
     box-sizing: border-box;
     height: 300px;
