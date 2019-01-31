@@ -1,5 +1,5 @@
 body {
-    margin: 0;
+    margin: 68px 0 0 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
         "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -9,6 +9,7 @@ body {
     background: linear-gradient(-135deg, teal, #1d2d86);
     height: 100vh;
     width: 100vw;
+
 }
 
 body::-webkit-scrollbar {
@@ -30,6 +31,7 @@ code {
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
+    z-index: 200;
 }
 
 .about, .home, .media, .merch {
@@ -60,12 +62,13 @@ code {
 .aboutContainer {
     padding: 10px 15px;
     margin-top: 68px;
+    margin-bottom: 68px!important;
     display: flex;
     align-items: center;
 }
 
 .instrumentImgContainer img {
-    height: 170px;
+    height: 100px;
     padding-bottom: 15px;
 }
 
