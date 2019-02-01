@@ -30,9 +30,9 @@ class SimpleGrow extends React.Component {
     // const { classes } = this.props;
     const instrumentList = (
      this.state.instrumentList.map((instrument,i) => {
-         return <Grid item xs={6} sm={4} key={instrument}>
+         return <Grid item xs={6} sm={4} key={instrument} className="card">
              <Grow in={true} {...({timeout:500 + (100*[i*4]) }: {})}>
-                 <div className="card">
+                 <div >
                      <div className="instrumentImgContainer">
                          <img className="instrumentImage" alt={i} src={this.state.instrumentData[instrument].svg} />
                      </div>
@@ -47,11 +47,11 @@ class SimpleGrow extends React.Component {
     return (
         <section className="aboutPageContainer">
             <div className="aboutPage">
-                <Paper elevation={2} className="aboutBand">
+                <Paper elevation={0} className="aboutBand">
                     <Typography className="title">About Bellflower</Typography>
                     <Typography className="description">We're a highly collaborative group of musicians that bring and blend our different ideas together in every sgon we write. We play all original music and during our shows, you'll hear solos from everyone- meaning that guitar, bass, drums, percussion, keyboards, trumpet and voice will be heard.</Typography>
                 </Paper>
-                <Grid container spacing={24}>
+                <Grid container spacing={24} className="instrumentGrid">
                     {instrumentList}
                 </Grid>
             </div>

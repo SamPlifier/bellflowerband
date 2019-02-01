@@ -7,9 +7,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: linear-gradient(-135deg, teal, #1d2d86);
-    height: 100vh;
-    width: 100vw;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 body::-webkit-scrollbar {
@@ -20,6 +19,7 @@ code {
     font-family: Roboto,
         monospace;
 }
+
 /* nav container */
 .topNav {
     position: fixed;
@@ -32,8 +32,8 @@ code {
     align-items: center;
     padding: 5px 15px;
     z-index: 200;
-
 }
+
 /* nav elements */
 .about, .home, .media, .merch {
     width: 100%;
@@ -49,6 +49,7 @@ code {
     justify-content: center;
     align-items: center;
 }
+
 .homePage {
     width: 90vw;
     height: calc(100vh - 68px);
@@ -58,11 +59,13 @@ code {
     align-items: center;
     opacity: .8;
 }
+
 .aboutPageContainer {
-    width:100vw;
+    width: 100vw;
     display: flex;
     justify-content: center;
 }
+
 .aboutPage {
     width: 90vw;
 }
@@ -78,9 +81,11 @@ code {
     min-width: 330px;
     max-width: 670px;
 }
+
 .instrumentName {
     padding: 20px 0 15px 0;
 }
+
 .bandDescription p {
     width: 100%;
     color: white;
@@ -88,17 +93,26 @@ code {
     margin: 15px 0 0 0;
     font-size: 24px;
 }
+
 .aboutPage .aboutBand {
     margin: 30px 0;
     color: #222227;
+    background: transparent!important;
 }
+
 .aboutPage .aboutBand .title {
+    font-size: 20px;
     padding: 15px;
+    color: white;
 }
+
 .aboutPage .aboutBand .description {
+    font-size: 16px;
     padding: 15px;
     text-align: left;
+    color: white;
 }
+
 .smallLogo {
     height: 34px;
     width: 34px;
@@ -113,12 +127,27 @@ code {
 .instrumentsContainer {
     padding: 10px 15px;
 }
-.aboutPage .instrumentName, .aboutPage  .musician {
-    color: white!important;
+
+.instrumentGrid {
+    height:auto;
 }
+
+.aboutPage .instrumentName, .aboutPage .musician {
+    color: white !important;
+}
+.aboutPage .card {
+margin: 30px 0;
+}
+.aboutPage .card:hover {
+    filter: drop-shadow(0px 2px 2px white);
+    cursor: pointer;
+}
+
+
 .footer {
     box-sizing: border-box;
     height: 300px;
     padding: 5px 15px;
     background: #222227;
+    margin-top: 40px;
 }
