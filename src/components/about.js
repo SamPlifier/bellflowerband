@@ -16,10 +16,6 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center'
-  },
-  paper: {
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2,
   }
 });
 
@@ -31,19 +27,18 @@ class SimpleGrow extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+    // const { classes } = this.props;
     const instrumentList = (
      this.state.instrumentList.map((instrument,i) => {
          return <Grid item xs={6} sm={4} key={instrument}>
              <Grow in={true} {...({timeout:500 + (100*[i*4]) }: {})}>
-                 <Paper elevation={2} className={classes.paper}>
+                 <div className="card">
                      <div className="instrumentImgContainer">
                          <img className="instrumentImage" alt={i} src={this.state.instrumentData[instrument].svg} />
                      </div>
-                     <Divider />
                      <Typography className="instrumentName">{instrument.toUpperCase()}</Typography>
-                     <Typography >{this.state.instrumentData[instrument].musician}</Typography>
-                 </Paper>
+                     <Typography className="musician">{this.state.instrumentData[instrument].musician}</Typography>
+                </div>
              </Grow>
          </Grid>;
      })

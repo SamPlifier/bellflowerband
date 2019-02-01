@@ -113,7 +113,9 @@ code {
 .instrumentsContainer {
     padding: 10px 15px;
 }
-
+.aboutPage .instrumentName, .aboutPage  .musician {
+    color: white!important;
+}
 .footer {
     box-sizing: border-box;
     height: 300px;
