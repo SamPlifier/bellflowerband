@@ -26,7 +26,7 @@ const styles = theme => ({
 class SimpleGrow extends React.Component {
   state = {
     appear: true,
-    instrumentList: ['guitar', 'voice', 'bass', 'drums', 'handpercussion', 'keyboard'],
+    instrumentList: ['guitar', 'voice', 'bass', 'drums', 'percussion', 'keyboard'],
     instrumentData: instruments
   };
 
@@ -36,7 +36,7 @@ class SimpleGrow extends React.Component {
      this.state.instrumentList.map((instrument,i) => {
          return <Grid item xs={6} sm={4} key={instrument}>
              <Grow in={true} {...({timeout:500 + (100*[i*4]) }: {})}>
-                 <Paper elevation={4} className={classes.paper}>
+                 <Paper elevation={2} className={classes.paper}>
                      <div className="instrumentImgContainer">
                          <img className="instrumentImage" alt={i} src={this.state.instrumentData[instrument].svg} />
                      </div>
@@ -50,9 +50,17 @@ class SimpleGrow extends React.Component {
     )
 
     return (
-        <Grid container spacing={24} className="aboutContainer">
-            {instrumentList}
-        </Grid>
+        <section className="aboutPageContainer">
+            <div className="aboutPage">
+                <Paper elevation={2} className="aboutBand">
+                    <Typography className="title">About Bellflower</Typography>
+                    <Typography className="description">We're a highly collaborative group of musicians that bring and blend our different ideas together in every sgon we write. We play all original music and during our shows, you'll hear solos from everyone- meaning that guitar, bass, drums, percussion, keyboards, trumpet and voice will be heard.</Typography>
+                </Paper>
+                <Grid container spacing={24}>
+                    {instrumentList}
+                </Grid>
+            </div>
+        </section>
     );
   }
 }
