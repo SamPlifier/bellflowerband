@@ -6,7 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Grow from '@material-ui/core/Grow';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
+
 
 const styles = theme => ({
   root: {
@@ -20,17 +20,45 @@ const styles = theme => ({
 });
 
 class SimpleGrow extends React.Component {
+    constructor(props) {
+        super(props);
+        this.bandMemberClick = this.bandMemberClick.bind(this);
+    }
   state = {
     appear: true,
     instrumentList: ['guitar', 'voice', 'bass', 'drums', 'percussion', 'keyboard'],
-    instrumentData: instruments
+    instrumentData: instruments,
   };
+  bandMemberClick(e) {
+      let classList = e.currentTarget.className;
+      switch (classList.slice(classList.lastIndexOf(' '))) {
+          case 'guitar':
+              console.log('create franklin details modal');
+              break;
+              case 'voice':
+              console.log('create natashas details modal');
+              break;
+              case 'bass':
+              console.log('create davids details modal');
+              break;
+              case 'drums':
+              console.log('create jeffs details modal');
+              break;
+              case 'percussion':
+              console.log('create cindys details modal');
+              break;
+              case 'keyboard':
+              console.log('create sams details modal');
+              break;
+          default:
+
+      }
+  }
 
   render() {
-    // const { classes } = this.props;
     const instrumentList = (
      this.state.instrumentList.map((instrument,i) => {
-         return <Grid item xs={6} sm={4} key={instrument} className="card">
+         return <Grid item xs={6} sm={4} key={instrument} className={`card ` + instrument.toLowerCase()} onClick={this.bandMemberClick.bind(instrument)}>
              <Grow in={true} {...({timeout:500 + (100*[i*4]) }: {})}>
                  <div >
                      <div className="instrumentImgContainer">
@@ -49,7 +77,7 @@ class SimpleGrow extends React.Component {
             <div className="aboutPage">
                 <Paper elevation={0} className="aboutBand">
                     <Typography className="title">About Bellflower</Typography>
-                    <Typography className="description">We're a highly collaborative group of musicians that bring and blend our different ideas together in every sgon we write. We play all original music and during our shows, you'll hear solos from everyone- meaning that guitar, bass, drums, percussion, keyboards, trumpet and voice will be heard.</Typography>
+                    <Typography className="description">Paleo selvage leggings etsy. Unicorn viral williamsburg mlkshk woke DIY la croix poke try-hard raclette thundercats hammock kombucha blog selfies. Authentic celiac copper mug mumblecore. Cred typewriter keffiyeh coloring book franzen ugh street art single-origin coffee hell of pok pok. Squid everyday carry taiyaki, actually disrupt snackwave distillery jianbing adaptogen kombucha. Single-origin coffee pitchfork kickstarter actually, truffaut chia small batch sustainable vice slow-carb. Health goth shabby chic chia glossier helvetica small batch..</Typography>
                 </Paper>
                 <Grid container spacing={24} className="instrumentGrid">
                     {instrumentList}
