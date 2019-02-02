@@ -42,7 +42,7 @@ code {
 }
 
 .homePageContainer {
-    height: 100vh;
+    height: calc(100vh - 68px);
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -52,7 +52,6 @@ code {
 
 .homePage {
     width: 90vw;
-    height: calc(100vh - 68px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -97,7 +96,7 @@ code {
 .aboutPage .aboutBand {
     margin: 30px 0;
     color: #222227;
-    background: transparent!important;
+    background: transparent !important;
 }
 
 .aboutPage .aboutBand .title {
@@ -129,21 +128,40 @@ code {
 }
 
 .instrumentGrid {
-    height:auto;
+    height: auto;
 }
 
 .aboutPage .instrumentName, .aboutPage .musician {
     color: white !important;
 }
+
 .aboutPage .card {
-margin: 30px 0;
+    margin: 30px 0;
 }
+
 .aboutPage .card:hover {
     filter: drop-shadow(0px 2px 2px white);
     cursor: pointer;
 }
 
-
+.aboutPage .bandPhotoContainer {
+    background: url(http://bellflowerband.com/desktopPortraitGroup.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center;
+}
+.aboutPage .modal {
+    background: red!important;
+}
+#modal-title {
+background: teal;
+}
+#simple-modal-description {
+background: teal;
+}
+.modal .bandMemberImage {
+    width:100%!important;
+}
 .footer {
     box-sizing: border-box;
     height: 300px;
