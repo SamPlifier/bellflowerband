@@ -216,7 +216,12 @@ code {
     .bandMemberInfoContainer {
         width: 90%;
         margin: 20px;
-        justify-content: space-around;
+        justify-content: center;
+        height:66%;
+    }
+
+    .bandMemberInfoContainer p {
+        font-size: 18px;
     }
 
     .bandMemberInfoContainer h4 {
@@ -224,23 +229,16 @@ code {
     }
 
     .bandMemberImgContainer {
-        /* filter: drop-shadow(1px 1px 2px black); */
+        filter: drop-shadow(1px 1px 2px black);
         width: 100%;
-        height: 350px;
-        overflow: hidden;
+        height: 33%;
         margin: 0;
     }
 
     .bandMemberImgContainer img {
         width: 100%;
         height: 100%;
-        object-position: top;
-    }
-
-    .bandMemberInfoContainer {
-        justify-content: center;
-    }
-    .bandMemberInfoContainer p {
-        font-size: 18px;
+        -o-object-fit: top;
+        object-fit: top;
     }
 }
