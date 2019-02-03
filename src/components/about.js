@@ -7,7 +7,6 @@ import Grow from '@material-ui/core/Grow';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
-import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {
@@ -17,7 +16,17 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center'
-  }
+},
+paper: {
+    position: 'absolute',
+    width: theme.spacing.unit * 30,
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing.unit * 4,
+    outline: 'none',
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2
+  },
 });
 
 class SimpleGrow extends React.Component {
@@ -30,33 +39,28 @@ class SimpleGrow extends React.Component {
     instrumentList: ['guitar', 'voice', 'bass', 'drums', 'percussion', 'keyboard'],
     instrumentData: instruments,
     open: false,
-    modalType: null
+    musiciansModal: null,
+    musicianName: null
   };
   bandMemberClick(e) {
       let classList = e.currentTarget.className;
+      let name = e.currentTarget.dataset.idMusician;
       let role = classList.slice(classList.lastIndexOf(' '));
       this.setState({
-          modalType: role
+          musiciansModal: role,
+          musicianName: name,
+          open: true
       })
   }
-  createModal() {
-      if (this.state.modalOpen === true) {
-          console.log(`modal open = ${this.state.modalOpen}`);
-      }
-    }
-    handleOpen = () => {
-        this.setState({open: true});
-    };
-
     handleClose = () => {
         this.setState({open: false});
     };
   render() {
     const instrumentList = (
      this.state.instrumentList.map((instrument,i) => {
-         return <Grid item xs={6} sm={4} key={instrument} className={`card ` + instrument.toLowerCase()} onClick={this.bandMemberClick.bind(instrument)}>
-             <Grow in={true} {...({timeout:500 + (100*[i*4]) }: {})}>
-                 <div >
+         return <Grid item xs={6} sm={4} key={instrument} data-id-musician={this.state.instrumentData[instrument].musician} className={`card ${instrument.toLowerCase()}`} onClick={this.bandMemberClick.bind(instrument)} >
+             <Grow in={true} {...({timeout:500 + (100*[i*4]) }: {})} >
+                 <div>
                      <div className="instrumentImgContainer">
                          <img className="instrumentImage" alt={i} src={this.state.instrumentData[instrument].svg} />
                      </div>
@@ -80,13 +84,15 @@ class SimpleGrow extends React.Component {
                     {instrumentList}
                 </Grid>
                 <div className="modal"></div>
-                    <Button onClick={this.handleOpen}>Open Modal</Button>
                     <Modal aria-labelledby="bellflower member details" aria-describedby="bellflower member details" open={this.state.open} onClose={this.handleClose}>
-                        <div className="modal">
-                            <Typography variant="h6" id="modal-title">Modal title will be based on band member clicked</Typography>
-                            <Typography variant="subtitle1" id="simple-modal-description">Modal description will be based on member clicked.</Typography>
-                            <img className="bandMemberImage" alt="bandMemberDetails" src="https://images.pexels.com/photos/196652/pexels-photo-196652.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-                        </div>
+                        <section className="memberInfoContainer">
+                            <div className="bandMemberImgContainer">Shit</div>
+                            <div className="bandMemberInfoContainer">
+                                    <h4>{this.state.musicianName}</h4>
+                                    <h5>{this.state.musiciansModal}</h5>
+                                    <p>Here's a few parargraphs about how and what Franklin has been up to in his journey as a guitarist. He has a cd case full of riffs and original material, any of which, at any time, might become the seed for their next big song.</p>
+                            </div>
+                        </section>
                     </Modal>
             </div>
         </section>

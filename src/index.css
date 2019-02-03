@@ -150,18 +150,37 @@ code {
     height: 400px;
     background-position: center;
 }
-.aboutPage .modal {
-    background: red!important;
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    margin: 0 auto;
+    border: none;
+    box-shadow: none!important;
+    display: flex;
 }
-#modal-title {
-background: teal;
+.memberInfoContainer {
+    display: flex;
+    align-items: center;
+    background: white;
+    width:80vw;
+    margin: 0 auto;
 }
-#simple-modal-description {
-background: teal;
+.bandMemberImgContainer {
+    height: 200px;
+    width: 20vw!important;
 }
-.modal .bandMemberImage {
-    width:100%!important;
+
+.bandMemberInfoContiner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: green!important;
 }
+
 .footer {
     box-sizing: border-box;
     height: 300px;
