@@ -16,17 +16,7 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center'
-},
-paper: {
-    position: 'absolute',
-    width: theme.spacing.unit * 30,
-    backgroundColor: theme.palette.background.paper,
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing.unit * 4,
-    outline: 'none',
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2
-  },
+}
 });
 
 class SimpleGrow extends React.Component {
@@ -40,15 +30,19 @@ class SimpleGrow extends React.Component {
     instrumentData: instruments,
     open: false,
     musiciansModal: null,
-    musicianName: null
+    musicianName: null,
+    musicianPhoto: null
   };
   bandMemberClick(e) {
       let classList = e.currentTarget.className;
       let name = e.currentTarget.dataset.idMusician;
+      let photo = e.currentTarget.dataset.idImgurl;
+      console.log(photo);
       let role = classList.slice(classList.lastIndexOf(' '));
       this.setState({
           musiciansModal: role,
           musicianName: name,
+          musicianPhoto: photo,
           open: true
       })
   }
@@ -58,7 +52,7 @@ class SimpleGrow extends React.Component {
   render() {
     const instrumentList = (
      this.state.instrumentList.map((instrument,i) => {
-         return <Grid item xs={6} sm={4} key={instrument} data-id-musician={this.state.instrumentData[instrument].musician} className={`card ${instrument.toLowerCase()}`} onClick={this.bandMemberClick.bind(instrument)} >
+         return <Grid item xs={6} sm={4} key={instrument} data-id-musician={this.state.instrumentData[instrument].musician} data-id-imgurl={this.state.instrumentData[instrument].photo} className={`card ${instrument.toLowerCase()}`} onClick={this.bandMemberClick.bind(instrument)} >
              <Grow in={true} {...({timeout:500 + (100*[i*4]) }: {})} >
                  <div>
                      <div className="instrumentImgContainer">
@@ -85,12 +79,12 @@ class SimpleGrow extends React.Component {
                 </Grid>
                 <div className="modal"></div>
                     <Modal aria-labelledby="bellflower member details" aria-describedby="bellflower member details" open={this.state.open} onClose={this.handleClose}>
-                        <section className="memberInfoContainer">
-                            <div className="bandMemberImgContainer">Shit</div>
+                        <section className="imgAndInfoContainer">
+                            <div className="bandMemberImgContainer"><img alt="anything" src={this.state.musicianPhoto}/></div>
                             <div className="bandMemberInfoContainer">
                                     <h4>{this.state.musicianName}</h4>
-                                    <h5>{this.state.musiciansModal}</h5>
-                                    <p>Here's a few parargraphs about how and what Franklin has been up to in his journey as a guitarist. He has a cd case full of riffs and original material, any of which, at any time, might become the seed for their next big song.</p>
+                                    <h4>{this.state.musiciansModal}</h4>
+                                    <p>Pickled tousled listicle kitsch, chartreuse roof party blue bottle tattooed asymmetrical gastropub banh mi. Farm-to-table chillwave food truck, pabst pitchfork cloud bread taiyaki paleo vegan ugh tbh pug authentic man bun. YOLO godard sartorial vinyl. Everyday carry brooklyn you probably haven't heard of them food truck aesthetic raclette chicharrones put a bird on it cold-pressed fanny pack cray craft beer drinking vinegar single-origin coffee vice. </p>
                             </div>
                         </section>
                     </Modal>
