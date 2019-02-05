@@ -45,7 +45,10 @@ code {
     text-decoration: none;
     text-align: center;
 }
-
+#about, #home, #media, #merch {
+    /* typography container for some reason adds 12px right padding, set to 0*/
+    padding: 0;
+}
 .homePageContainer {
     height: calc(100vh - 68px);
     width: 100vw;
