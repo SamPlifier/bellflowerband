@@ -112,7 +112,7 @@ code {
 .aboutPage .aboutBand .description {
     font-size: 16px;
     padding: 15px;
-    text-align: left;
+    text-align: justify;
     color: white;
 }
 
@@ -151,8 +151,12 @@ code {
 .aboutPage .bandPhotoContainer {
     background: url(http://bellflowerband.com/desktopPortraitGroup.jpg);
     background-size: cover;
-    height: 400px;
+    height: 420px;
+    width: 100vw;
+    position: relative;
     background-position: center;
+    opacity: 0.5;
+    right: 5.6%;
 }
 
 .imgAndInfoContainer {
@@ -206,7 +210,7 @@ code {
     margin-top: 40px;
 }
 
-@media only screen and (width < 1100px) {
+@media only screen and (width < 900px) {
     .imgAndInfoContainer {
         flex-direction: column;
         height: 80vh;

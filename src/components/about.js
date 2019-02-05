@@ -71,9 +71,14 @@ class SimpleGrow extends React.Component {
             <div className="aboutPage">
                 <Paper elevation={0} className="aboutBand">
                     <Typography className="title">About Bellflower</Typography>
-                    <div className="bandPhotoContainer"></div>
-                    <Typography className="description">Paleo selvage leggings etsy. Unicorn viral williamsburg mlkshk woke DIY la croix poke try-hard raclette thundercats hammock kombucha blog selfies. Authentic celiac copper mug mumblecore. Cred typewriter keffiyeh coloring book franzen ugh street art single-origin coffee hell of pok pok. Squid everyday carry taiyaki, actually disrupt snackwave distillery jianbing adaptogen kombucha. Single-origin coffee pitchfork kickstarter actually, truffaut chia small batch sustainable vice slow-carb. Health goth shabby chic chia glossier helvetica small batch..</Typography>
+
+                    <Typography className="description">Bellflower plays original rock music in and around Chapel Hill and the Triangle, North Carolina, centering on the soaring voice of Natasha Wilson.
+
+The group originated with the songwriting collaboration of Natasha and guitarist Franklin Bellflower, whose solid rhythm and melodic lead playing are a key element of the music.
+
+Drummer Jeff Lindsay and percussionist Cindy Jones provide nuanced rhythmic propulsion, while multi-instrumentalist Sam Davis-Castro adds a vast sonic palette that takes the music to another level. Bassist & songwriter David Criswell holds down the bottom and offers new material for the band to explore. Collaborative writing processes and weekly rehearsals are the main ingredients in creating their lively,{'\u00A0'}polished{'\u00A0'}performances.</Typography>
                 </Paper>
+                <div className="bandPhotoContainer"></div>
                 <Grid container spacing={24} className="instrumentGrid">
                     {instrumentList}
                 </Grid>
