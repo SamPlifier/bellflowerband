@@ -18,7 +18,6 @@ const styles = {
     },
     root: {
         flexGrow: 1,
-        background: 'white',
         padding: 0
     },
     grow: {
@@ -27,7 +26,8 @@ const styles = {
     menuButton: {
         marginLeft: 0,
         marginRight: 0,
-        color: 'white'
+        color: 'white',
+        opacity: .87
     }
 };
 class TemporaryDrawer extends React.Component {

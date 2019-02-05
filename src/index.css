@@ -36,6 +36,7 @@ code {
     align-items: center;
     padding: 5px 15px;
     z-index: 200;
+    background: #222327;
 }
 
 /* nav elements */
@@ -91,7 +92,7 @@ code {
 
 .bandDescription p {
     width: 100%;
-    color: white;
+    color: #e0e0e0;
     line-height: 22px;
     margin: 15px 0 0 0;
     font-size: 24px;
@@ -99,27 +100,28 @@ code {
 
 .aboutPage .aboutBand {
     margin: 30px 0;
-    color: #222227;
+    color: #222327;
     background: transparent !important;
 }
 
 .aboutPage .aboutBand .title {
     font-size: 20px;
     padding: 15px;
-    color: white;
+    color: #e0e0e0;
 }
 
 .aboutPage .aboutBand .description {
     font-size: 16px;
     padding: 15px;
     text-align: justify;
-    color: white;
+    color: #e0e0e0;
 }
 
 .smallLogo {
     height: 34px;
     width: 34px;
     margin-left: 5px;
+    opacity: .85;
 }
 
 .smallLogo img {
@@ -136,7 +138,7 @@ code {
 }
 
 .aboutPage .instrumentName, .aboutPage .musician {
-    color: white !important;
+    color: #e0e0e0 !important;
 }
 
 .aboutPage .card {
@@ -144,7 +146,7 @@ code {
 }
 
 .aboutPage .card:hover {
-    filter: drop-shadow(0px 2px 2px white);
+    filter: drop-shadow(0px 2px 2px #e0e0e0);
     cursor: pointer;
 }
 
@@ -169,7 +171,9 @@ code {
     transform: translate(-50%, -50%);
     width: 80vw;
     margin: 0 auto;
-    background: white;
+    /* background: #e0e0e0; */
+    background: linear-gradient(-90deg, #b32539, #801335);
+    filter: drop-shadow(1px 1px 2px black);
 }
 
 .bandMemberImgContainer {
@@ -182,6 +186,7 @@ code {
     position: relative;
     width: 100%;
     filter: drop-shadow(1px 1px 2px black);
+    opacity: .67;
 }
 
 .bandMemberInfoContainer {
@@ -194,7 +199,7 @@ code {
     text-align: justify;
     margin: 30px 30px 30px 15px;
     height: 100%;
-    color: #222227;
+    color: #222327;
     font-family: sans-serif;
 }
 
@@ -206,22 +211,24 @@ code {
     box-sizing: border-box;
     height: 300px;
     padding: 5px 15px;
-    background: #222227;
+    background: #222327;
     margin-top: 40px;
 }
 
 @media only screen and (width < 900px) {
     .imgAndInfoContainer {
         flex-direction: column;
-        height: 80vh;
+        max-height: 80vh;
         width: 85vw;
+        min-height: 450px;
     }
 
     .bandMemberInfoContainer {
         width: 90%;
         margin: 20px;
-        justify-content: center;
-        height:66%;
+        justify-content: flex-start;
+        height: 60%;
+        overflow-y: scroll;
     }
 
     .bandMemberInfoContainer p {
@@ -235,14 +242,15 @@ code {
     .bandMemberImgContainer {
         filter: drop-shadow(1px 1px 2px black);
         width: 100%;
-        height: 33%;
+        height: 40%;
         margin: 0;
+        overflow: hidden;
     }
 
     .bandMemberImgContainer img {
-        width: 100%;
-        height: 100%;
-        -o-object-fit: top;
-        object-fit: top;
+        width: calc(100% - 40px);
+        margin: 20px 20px 0 20px;
+        -o-object-fit: contain;
+        object-fit: contain;
     }
 }
