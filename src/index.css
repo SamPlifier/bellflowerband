@@ -232,11 +232,11 @@ code {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
 }
 .eventCard {
     border: 2px solid #e0e0e0;
     padding: 15px;
-    width: 27vw;
     color: #e0e0e0;
 }
 

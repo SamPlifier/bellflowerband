@@ -18,10 +18,10 @@ class Calendar extends React.Component {
     }
     date(utcDate, type) {
         let date = new Date(utcDate);
-        const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ];
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'Novermber', 'December'];
         const dateMaker = {
-            get day() {return days[date.getDay() - 1]},
+            get day() {return days[date.getDay()]},
             get dayNum() {return date.getDate()},
             get month() {return months[date.getMonth()]},
             get year() {return date.getFullYear()},
@@ -64,9 +64,7 @@ class Calendar extends React.Component {
             this.state.calendarEvents.map((calEvent, i) => {
                 return  <div className="eventCard" key={i}>
                         <div className="dayNameNum"></div>
-                            <p>{this.date(calEvent.start.dateTime, 'dayNum')}</p>
-                            <p>{this.date(calEvent.start.dateTime, 'day')}</p>
-                            <p>{this.date(calEvent.start.dateTime, 'month')}</p>
+                            <p>{this.date(calEvent.start.dateTime, 'day')}, {this.date(calEvent.start.dateTime, 'month')} {this.date(calEvent.start.dateTime, 'dayNum')}</p>
                             <p>{this.date(calEvent.start.dateTime, 'localTime')} - {this.date(calEvent.end.dateTime, 'localTime')}</p>
                             <p>{calEvent.summary}</p>
                             <p>{calEvent.location}</p>
