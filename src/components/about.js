@@ -39,7 +39,6 @@ class About extends React.Component {
       let name = e.currentTarget.dataset.idMusician;
       let photo = e.currentTarget.dataset.idImgurl;
       let description = e.currentTarget.dataset.idDescription
-      console.log(photo);
       let role = classList.slice(classList.lastIndexOf(' '));
       this.setState({
           musiciansModal: role,
@@ -73,7 +72,7 @@ class About extends React.Component {
         <section className="aboutPageContainer">
             <div className="aboutPage">
                 <Paper elevation={0} className="aboutBand">
-                    <Typography className="title">About Bellflower</Typography>
+                    <Typography className="title">About</Typography>
 
                     <Typography className="description">Bellflower plays original rock music in and around Chapel Hill and the Triangle, North Carolina, centering on the soaring voice of Natasha Wilson. The group originated with the songwriting collaboration of Natasha and guitarist Franklin Bellflower, whose solid rhythm and melodic lead playing are a key element of the music. Drummer Jeff Lindsay and percussionist Cindy Jones provide nuanced rhythmic propulsion, while multi-instrumentalist Sam Davis-Castro adds a vast sonic palette that takes the music to another level. Bassist & songwriter David Criswell holds down the bottom and offers new material for the band to explore. Collaborative writing processes and weekly rehearsals are the main ingredients in creating their lively,{'\u00A0'}polished{'\u00A0'}performances.</Typography>
                 </Paper>
@@ -81,7 +80,6 @@ class About extends React.Component {
                 <Grid container spacing={24} className="instrumentGrid">
                     {instrumentList}
                 </Grid>
-                <div className="modal"></div>
                     <Modal aria-labelledby="bellflower member details" aria-describedby="bellflower member details" open={this.state.open} onClose={this.handleClose}>
                         <section className="imgAndInfoContainer">
                             <div className="bandMemberImgContainer"><img alt="anything" src={this.state.musicianPhoto}/></div>

@@ -53,7 +53,7 @@ class TemporaryDrawer extends React.Component {
     const fullList = (
       <div className={classes.fullList}>
         <List classes={{root: classes.root}} elevation={3}>
-          {['about', 'media', 'merch', 'home'].map((text, index) => (
+          {['about', 'media', 'merch', 'events', 'home'].map((text, index) => (
             <ListItem button key={text} >
               <Link component={'button'} className={text} to={`/${routeTo(text)}`}>
                   <ListItemText primary={text.toUpperCase()} id={text}/>

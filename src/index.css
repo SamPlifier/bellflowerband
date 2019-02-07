@@ -23,7 +23,20 @@ code {
     font-family: Roboto,
         monospace;
 }
+/* icons */
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
 
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 /* nav container */
 .topNav {
     position: fixed;
@@ -40,15 +53,17 @@ code {
 }
 
 /* nav elements */
-.about, .home, .media, .merch {
+.about, .home, .media, .merch, .events {
     width: 100%;
     text-decoration: none;
     text-align: center;
 }
-#about, #home, #media, #merch {
+
+#about, #home, #media, #merch, #events {
     /* typography container for some reason adds 12px right padding, set to 0*/
     padding: 0;
 }
+
 .homePageContainer {
     height: calc(100vh - 68px);
     width: 100vw;
@@ -114,7 +129,7 @@ code {
 }
 
 .aboutPage .aboutBand .description {
-    font-size: 16px;
+    font-size: 18px;
     padding: 15px;
     text-align: justify;
     color: #e0e0e0;
@@ -137,11 +152,12 @@ code {
 }
 
 .instrumentGrid {
-    height: auto;
+    margin: 0 -12px !important;
 }
 
 .aboutPage .instrumentName, .aboutPage .musician {
     color: #e0e0e0 !important;
+    font-size: 1rem;
 }
 
 .aboutPage .card {
@@ -175,7 +191,7 @@ code {
     width: 80vw;
     margin: 0 auto;
     /* background: #e0e0e0; */
-    background: linear-gradient(-90deg, #b32539, #801335);
+    background: linear-gradient(90deg, #b32539, #801335);
     filter: drop-shadow(1px 1px 2px black);
 }
 
@@ -202,12 +218,26 @@ code {
     text-align: justify;
     margin: 30px 30px 30px 15px;
     height: 100%;
-    color: #222327;
+    color: #e0e0e0;
     font-family: sans-serif;
 }
 
 .bandMemberInfoContainer h4 {
-    text-transform: uppercase !important;
+    /* text-transform: uppercase !important; */
+}
+.calendarPageContainer {
+    padding: 0 20px;
+}
+.calendarPage .eventListContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.eventCard {
+    border: 2px solid #e0e0e0;
+    padding: 15px;
+    width: 27vw;
+    color: #e0e0e0;
 }
 
 .footer {

@@ -7,6 +7,7 @@ import Home from './components/home.js';
 import Media from './components/media.js';
 import Merch from './components/merch.js';
 import About from './components/about.js';
+import Calendar from './components/calendar.js';
 import Footer from './components/footer.js'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import teal from '@material-ui/core/colors/teal';
@@ -35,6 +36,7 @@ class App extends Component {
                         <Route path="/media" component={Media} />
                         <Route path="/merch" component={Merch} />
                         <Route path="/about" component={About} />
+                        <Route path="/events" component={Calendar} />
                     </div>
                     <Footer />
                 </div>
