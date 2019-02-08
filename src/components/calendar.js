@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-
+import styles from '../styles/calendar.css';
+console.log(styles);
 
 class Calendar extends React.Component {
     state = {
@@ -8,14 +9,29 @@ class Calendar extends React.Component {
     }
 
     componentDidMount() {
+        let now = new Date();
+        let startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
+        let endOfDayOneMonthOut = new Date(now.getFullYear(), now.getMonth() + 1, now.getDate(), 23, 59, 59);
         axios.get('https://www.googleapis.com/calendar/v3/calendars/thebellflowerband%40gmail.com/events?key=AIzaSyA73ezNBuEPQSSjMgoMjfiFa5wwT1TJht8')
             .then(res => {
-                let events = res.data.items;
-                events = events.sort((a, b) => (Date.parse(a.start.dateTime.toString()) > Date.parse(b.start.dateTime.toString()) ? 1: -1));
-                console.log(events);
-                this.setState({ calendarEvents: events });
+                let allEvents = res.data.items;
+                allEvents = allEvents.sort((a, b) => (Date.parse(a.start.dateTime.toString()) > Date.parse(b.start.dateTime.toString()) ? 1: -1));
+                let futureEvents = [];
+                allEvents.map((calEvent, i) => {
+                    let eventTime = new Date(calEvent.start.dateTime);
+                    if (eventTime > startOfToday && eventTime < endOfDayOneMonthOut) {
+                        futureEvents.push(calEvent);
+                    }
+                    return true;
+                })
+                this.setState({ calendarEvents: futureEvents });
+            })
+            .catch(err => {
+                alert(`Poo- error occurred: ${err}`);
+                console.log(err);
             })
     }
+
     date(utcDate, type) {
         let date = new Date(utcDate);
         const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ];
@@ -64,9 +80,9 @@ class Calendar extends React.Component {
             this.state.calendarEvents.map((calEvent, i) => {
                 return  <div className="eventCard" key={i}>
                         <div className="dayNameNum"></div>
+                        <p>{calEvent.summary}</p>
                             <p>{this.date(calEvent.start.dateTime, 'day')}, {this.date(calEvent.start.dateTime, 'month')} {this.date(calEvent.start.dateTime, 'dayNum')}</p>
                             <p>{this.date(calEvent.start.dateTime, 'localTime')} - {this.date(calEvent.end.dateTime, 'localTime')}</p>
-                            <p>{calEvent.summary}</p>
                             <p>{calEvent.location}</p>
                         </div>
             })

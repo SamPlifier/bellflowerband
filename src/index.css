@@ -190,7 +190,6 @@ code {
     transform: translate(-50%, -50%);
     width: 80vw;
     margin: 0 auto;
-    /* background: #e0e0e0; */
     background: linear-gradient(90deg, #b32539, #801335);
     filter: drop-shadow(1px 1px 2px black);
 }
@@ -224,20 +223,6 @@ code {
 
 .bandMemberInfoContainer h4 {
     /* text-transform: uppercase !important; */
-}
-.calendarPageContainer {
-    padding: 0 20px;
-}
-.calendarPage .eventListContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-}
-.eventCard {
-    border: 2px solid #e0e0e0;
-    padding: 15px;
-    color: #e0e0e0;
 }
 
 .footer {
