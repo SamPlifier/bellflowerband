@@ -82,20 +82,7 @@ code {
     opacity: .8;
 }
 
-.aboutPageContainer {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-}
 
-.aboutPage {
-    width: 90vw;
-}
-
-.instrumentImgContainer img {
-    height: 100px;
-    padding-bottom: 15px;
-}
 
 .bellflowerLogo {
     filter: invert(100);
@@ -104,36 +91,7 @@ code {
     max-width: 670px;
 }
 
-.instrumentName {
-    padding: 20px 0 15px 0;
-}
 
-.bandDescription p {
-    width: 100%;
-    color: #e0e0e0;
-    line-height: 22px;
-    margin: 15px 0 0 0;
-    font-size: 24px;
-}
-
-.aboutPage .aboutBand {
-    margin: 30px 0;
-    color: #222327;
-    background: transparent !important;
-}
-
-.aboutPage .aboutBand .title {
-    font-size: 20px;
-    padding: 15px;
-    color: #e0e0e0;
-}
-
-.aboutPage .aboutBand .description {
-    font-size: 18px;
-    padding: 15px;
-    text-align: justify;
-    color: #e0e0e0;
-}
 
 .smallLogo {
     height: 34px;
@@ -147,84 +105,6 @@ code {
     width: auto;
 }
 
-.instrumentsContainer {
-    padding: 10px 15px;
-}
-
-.instrumentGrid {
-    margin: 0 -12px !important;
-}
-
-.aboutPage .instrumentName, .aboutPage .musician {
-    color: #e0e0e0 !important;
-    font-size: 1rem;
-}
-
-.aboutPage .card {
-    margin: 30px 0;
-}
-
-.aboutPage .card:hover {
-    filter: drop-shadow(0px 2px 2px #e0e0e0);
-    cursor: pointer;
-}
-
-.aboutPage .bandPhotoContainer {
-    background: url(http://bellflowerband.com/desktopPortraitGroup.jpg);
-    background-size: cover;
-    height: 420px;
-    width: 100vw;
-    position: relative;
-    background-position: center;
-    opacity: 0.5;
-    right: 5.6%;
-}
-
-.imgAndInfoContainer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    transform: translate(-50%, -50%);
-    width: 80vw;
-    margin: 0 auto;
-    background: linear-gradient(90deg, #b32539, #801335);
-    filter: drop-shadow(1px 1px 2px black);
-}
-
-.bandMemberImgContainer {
-    margin: 30px 15px 30px 30px;
-    width: 60%;
-}
-
-.bandMemberImgContainer img {
-    object-fit: cover;
-    position: relative;
-    width: 100%;
-    filter: drop-shadow(1px 1px 2px black);
-    opacity: .67;
-}
-
-.bandMemberInfoContainer {
-    width: 40%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: justify;
-    margin: 30px 30px 30px 15px;
-    height: 100%;
-    color: #e0e0e0;
-    font-family: sans-serif;
-}
-
-.bandMemberInfoContainer h4 {
-    /* text-transform: uppercase !important; */
-}
-
 .footer {
     box-sizing: border-box;
     height: 300px;
@@ -233,7 +113,7 @@ code {
     margin-top: 40px;
 }
 
-@media only screen and (width < 900px) {
+/* @media only screen and (width < 900px) {
     .imgAndInfoContainer {
         flex-direction: column;
         max-height: 80vh;
@@ -271,4 +151,4 @@ code {
         -o-object-fit: contain;
         object-fit: contain;
     }
-}
+} */

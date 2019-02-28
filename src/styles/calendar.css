@@ -1,7 +1,17 @@
 .calendarPageContainer {
-    padding: 0 20px;
+    width: 90vw;
+    margin: 0 auto;
 }
-
+.calendarPageContainer .numOfEvents {
+    margin-top: 88px;
+    color: #222327;
+    background: transparent !important;
+}
+.calendarPageContainer .title {
+    font-size: 20px;
+    padding: 15px;
+    color: #e0e0e0;
+}
 .calendarPageContainer .eventListContainer {
     display: flex;
     justify-content: space-between;
@@ -13,6 +23,39 @@
     border: 2px solid #e0e0e0;
     padding: 15px;
     color: #e0e0e0;
-    width: 50vw;
-    margin: 30px 0;
+    margin: 30px;
+    width: 70vw
+}
+
+.detailsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.detailsContainer .details {}
+
+.detailsContainer .locationImage {
+    height: 300px;
+}
+.detailsContainer .locationImage img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: .7;
+}
+.eventCard .material-icons {
+    margin-right: 15px;
+}
+
+.eventCard .hasIcon {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    font-size: 18px;
+}
+
+.directions, .openInCalendar {
+    text-decoration: none;
+    color: inherit;
 }

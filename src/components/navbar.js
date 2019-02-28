@@ -33,6 +33,7 @@ const styles = {
 class TemporaryDrawer extends React.Component {
   state = {
     bottom: false,
+    pageOpen: null
   };
 
   toggleDrawer = (side, open) => () => {
@@ -40,7 +41,12 @@ class TemporaryDrawer extends React.Component {
       [side]: open,
     });
   };
-
+  initialPage() {
+      console.log('initial page');
+  }
+  updateNavPageName(name) {
+      console.log(name);
+  }
   render() {
     const routeTo = (text) => {
          if (text === 'home') {
@@ -55,7 +61,7 @@ class TemporaryDrawer extends React.Component {
         <List classes={{root: classes.root}} elevation={3}>
           {['about', 'media', 'merch', 'events', 'home'].map((text, index) => (
             <ListItem button key={text} >
-              <Link component={'button'} className={text} to={`/${routeTo(text)}`}>
+              <Link component={'button'} className={text} to={`/${routeTo(text)}`} onClick={this.updateNavPageName(text)}>
                   <ListItemText primary={text.toUpperCase()} id={text}/>
               </Link>
             </ListItem>

@@ -1,7 +1,8 @@
+import '../styles/calendar.css';
 import React from 'react';
 import axios from 'axios';
-import styles from '../styles/calendar.css';
-console.log(styles);
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 
 class Calendar extends React.Component {
     state = {
@@ -15,6 +16,7 @@ class Calendar extends React.Component {
         axios.get('https://www.googleapis.com/calendar/v3/calendars/thebellflowerband%40gmail.com/events?key=AIzaSyA73ezNBuEPQSSjMgoMjfiFa5wwT1TJht8')
             .then(res => {
                 let allEvents = res.data.items;
+                // console.log(allEvents);
                 allEvents = allEvents.sort((a, b) => (Date.parse(a.start.dateTime.toString()) > Date.parse(b.start.dateTime.toString()) ? 1: -1));
                 let futureEvents = [];
                 allEvents.map((calEvent, i) => {
@@ -27,7 +29,6 @@ class Calendar extends React.Component {
                 this.setState({ calendarEvents: futureEvents });
             })
             .catch(err => {
-                alert(`Poo- error occurred: ${err}`);
                 console.log(err);
             })
     }
@@ -74,22 +75,34 @@ class Calendar extends React.Component {
         }
         return formattedDate;
     }
+    formatMapsUrl(address) {
+        let firstPart = 'https://www.google.com/maps/search/?api=1&query=';
+        let secondPart = encodeURIComponent(address);
+        return firstPart+secondPart;
+    }
 
     render() {
         const eventsList = (
             this.state.calendarEvents.map((calEvent, i) => {
                 return  <div className="eventCard" key={i}>
-                        <div className="dayNameNum"></div>
-                        <p>{calEvent.summary}</p>
-                            <p>{this.date(calEvent.start.dateTime, 'day')}, {this.date(calEvent.start.dateTime, 'month')} {this.date(calEvent.start.dateTime, 'dayNum')}</p>
-                            <p>{this.date(calEvent.start.dateTime, 'localTime')} - {this.date(calEvent.end.dateTime, 'localTime')}</p>
-                            <p>{calEvent.location}</p>
+                            <h3>{calEvent.summary}</h3>
+                            <div className="detailsContainer">
+                                <div className="details">
+                                    <p className="hasIcon"><i className="material-icons">access_time</i>{this.date(calEvent.start.dateTime, 'day')}, {this.date(calEvent.start.dateTime, 'month')} {this.date(calEvent.start.dateTime, 'dayNum')} {String.fromCharCode(183)} {this.date(calEvent.start.dateTime, 'localTime')} - {this.date(calEvent.end.dateTime, 'localTime')}</p>
+                                    <p className="hasIcon"><i className="material-icons">location_on</i><a className="directions" alt="directions link" href={this.formatMapsUrl(calEvent.location)}>{calEvent.location}</a></p>
+                                    <p className="hasIcon"><i className="material-icons">description</i>{calEvent.description}</p>
+                                    <p className="hasIcon"><i className="material-icons">calendar_today</i><a className="openInCalendar" href={calEvent.htmlLink}>View in Google Calendar</a></p>
+                                </div>
+                            </div>
                         </div>
             })
         )
         return (
             <section className="calendarPageContainer">
                 <div className="calendarPage">
+                    <Paper elevation={0} className="numOfEvents">
+                        <Typography className="title">There are {this.state.calendarEvents.length} upcoming events this month.</Typography>
+                    </Paper>
                 <div className="eventListContainer">{eventsList}</div>
                 </div>
             </section>

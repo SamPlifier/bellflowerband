@@ -1,3 +1,4 @@
+import '../styles/about.css';
 import React from 'react';
 import instruments from './instruments';
 import PropTypes from 'prop-types';
@@ -72,11 +73,15 @@ class About extends React.Component {
         <section className="aboutPageContainer">
             <div className="aboutPage">
                 <Paper elevation={0} className="aboutBand">
-                    <Typography className="title">About</Typography>
+                    <Typography className="title">About the group</Typography>
 
                     <Typography className="description">Bellflower plays original rock music in and around Chapel Hill and the Triangle, North Carolina, centering on the soaring voice of Natasha Wilson. The group originated with the songwriting collaboration of Natasha and guitarist Franklin Bellflower, whose solid rhythm and melodic lead playing are a key element of the music. Drummer Jeff Lindsay and percussionist Cindy Jones provide nuanced rhythmic propulsion, while multi-instrumentalist Sam Davis-Castro adds a vast sonic palette that takes the music to another level. Bassist & songwriter David Criswell holds down the bottom and offers new material for the band to explore. Collaborative writing processes and weekly rehearsals are the main ingredients in creating their lively,{'\u00A0'}polished{'\u00A0'}performances.</Typography>
                 </Paper>
                 <div className="bandPhotoContainer"></div>
+                <Paper elevation={0} className="aboutBand">
+                    <Typography className="title">About the individuals</Typography>
+                    <Typography className="description">Each member brings a minimum of two decades of widely varied musical experiences, influences and practice to the group. The thing that ties them all together is simply the desire to participate in writing new music and to enjoy performing it. Click on an individual to read about them in their own words.</Typography>
+                </Paper>
                 <Grid container spacing={24} className="instrumentGrid">
                     {instrumentList}
                 </Grid>
