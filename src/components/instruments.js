@@ -1,4 +1,5 @@
 import samPhoto from '../assets/_sam3.png';
+console.log(__dirname);
 
 const instruments = {
     guitar: {
