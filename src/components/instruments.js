@@ -1,8 +1,8 @@
-import cindyPhoto from '../assets/_cindy.png';
-import samPhoto from '../assets/_sam.png';
-import natashaPhoto from '../assets/_natasha.png';
-import jeffPhoto from '../assets/_jeff.png';
-import davidPhoto from '../assets/_david.png';
+import cindyPhoto from '../assets/cindy.png';
+import samPhoto from '../assets/sam.png';
+import natashaPhoto from '../assets/natasha.png';
+import jeffPhoto from '../assets/jeff.png';
+import davidPhoto from '../assets/david.png';
 import franklinPhoto from '../assets/franklin.png';
 
 const instruments = {
