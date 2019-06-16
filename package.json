@@ -30,7 +30,7 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "homepage": "https://samplifier.github.io/bellflowerband/build",
+  "homepage": "https://samplifier.github.io/bellflowerband",
   "devDependencies": {
     "gh-pages": "^2.0.1"
   }
