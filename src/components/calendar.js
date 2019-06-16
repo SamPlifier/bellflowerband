@@ -16,7 +16,6 @@ class Calendar extends React.Component {
         axios.get('https://www.googleapis.com/calendar/v3/calendars/thebellflowerband%40gmail.com/events?key=AIzaSyA73ezNBuEPQSSjMgoMjfiFa5wwT1TJht8')
             .then(res => {
                 let allEvents = res.data.items;
-                // console.log(allEvents);
                 allEvents = allEvents.sort((a, b) => (Date.parse(a.start.dateTime.toString()) > Date.parse(b.start.dateTime.toString()) ? 1: -1));
                 let futureEvents = [];
                 allEvents.map((calEvent, i) => {

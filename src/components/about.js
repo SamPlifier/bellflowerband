@@ -8,7 +8,6 @@ import Grow from '@material-ui/core/Grow';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
-
 const styles = theme => ({
   root: {
       flexGrow: 1
@@ -55,7 +54,7 @@ class About extends React.Component {
   render() {
     const instrumentList = (
      this.state.instrumentList.map((instrument,i) => {
-         return <Grid item xs={6} sm={4} key={instrument} data-id-musician={this.state.instrumentData[instrument].musician} data-id-imgurl={this.state.instrumentData[instrument].photo} className={`card ${instrument.toLowerCase()}`} data-id-description={this.state.instrumentData[instrument].description} onClick={this.bandMemberClick.bind(instrument)} >
+         return <Grid item xs={12} sm={6} md={4} key={instrument} data-id-musician={this.state.instrumentData[instrument].musician} data-id-imgurl={this.state.instrumentData[instrument].photo} className={`card ${instrument.toLowerCase()}`} data-id-description={this.state.instrumentData[instrument].description} onClick={this.bandMemberClick.bind(instrument)} >
              <Grow in={true} {...({timeout:500 + (100*[i*4]) }: {})} >
                  <div>
                      <div className="instrumentImgContainer">

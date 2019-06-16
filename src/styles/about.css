@@ -62,7 +62,7 @@
 }
 
 .aboutPage .card:hover {
-    filter: drop-shadow(0px 2px 2px #e0e0e0);
+    filter: drop-shadow(0px 3px 0.8px #000);
     cursor: pointer;
 }
 
@@ -97,12 +97,12 @@
 }
 
 .bandMemberImgContainer img {
-    /* height: 313px; */
     object-fit: cover;
     position: relative;
     width: 100%;
     filter: drop-shadow(1px 1px 2px black);
     opacity: .67;
+    height: 308px;
 }
 
 .bandMemberInfoContainer {
@@ -112,7 +112,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: justify;
+    text-align: left;
     margin: 30px 30px 30px 15px;
     height: 100%;
     color: #e0e0e0;
@@ -122,7 +122,6 @@
 @media only screen and (width < 900px) {
     .imgAndInfoContainer {
         flex-direction: column;
-        /* max-height: 80vh; */
         width: 85vw;
         min-height: 450px;
     }
@@ -158,5 +157,15 @@
         margin: 40px 20px 0 20px;
         -o-object-fit: contain;
         object-fit: contain;
+    }
+}
+
+@media only screen and (width < 900px) and (orientation: landscape) {
+    .imgAndInfoContainer {
+        flex-direction: row;
+        min-height: unset;
+    }
+    .bandMemberImgContainer img {
+        margin: 0px 20px 0 20px;
     }
 }
