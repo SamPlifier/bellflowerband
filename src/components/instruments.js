@@ -1,9 +1,9 @@
-import cindyPhoto from '../assets/cindy.png';
-import samPhoto from '../assets/sam.png';
-import natashaPhoto from '../assets/natasha.png';
-import jeffPhoto from '../assets/jeff.png';
-import davidPhoto from '../assets/david.png';
-import franklinPhoto from '../assets/franklin.png';
+import cindyPhoto from '../assets/memberPhotos/cindy.png';
+import samPhoto from '../assets/memberPhotos/sam.png';
+import natashaPhoto from '../assets/memberPhotos/natasha.png';
+import jeffPhoto from '../assets/memberPhotos/jeff.png';
+import davidPhoto from '../assets/memberPhotos/david.png';
+import franklinPhoto from '../assets/memberPhotos/franklin.png';
 
 const instruments = {
     guitar: {

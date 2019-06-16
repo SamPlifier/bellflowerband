@@ -85,10 +85,11 @@
     align-items: center;
     justify-content: space-around;
     transform: translate(-50%, -50%);
-    width: 80vw;
+    width: 70vw;
+    max-width: 1100px;
     margin: 0 auto;
     background: linear-gradient(90deg, #b32539, #801335);
-    filter: drop-shadow(1px 1px 2px black);
+    filter: drop-shadow(1px 1px 2px #000);
 }
 
 .bandMemberImgContainer {
@@ -143,7 +144,7 @@
     }
 
     .bandMemberImgContainer {
-        filter: drop-shadow(1px 1px 2px black);
+        filter: drop-shadow(0px 0px 3px #000);
         width: 100%;
         height: 40%;
         margin: 0;

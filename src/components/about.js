@@ -86,7 +86,7 @@ class About extends React.Component {
                 </Grid>
                     <Modal aria-labelledby="bellflower member details" aria-describedby="bellflower member details" open={this.state.open} onClose={this.handleClose}>
                         <section className="imgAndInfoContainer">
-                            <div className="bandMemberImgContainer"><img alt={this.state.musicianName} src={this.state.musicianPhoto}/></div>
+                            <div className="bandMemberImgContainer"><img alt={'Image of band member ' + this.state.musicianName} src={this.state.musicianPhoto}/></div>
                             <div className="bandMemberInfoContainer">
                                     <h4>{this.state.musicianName}</h4>
                                     <h4>{this.state.musiciansModal}</h4>
